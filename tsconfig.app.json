@@ -18,10 +18,14 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
     "baseUrl": "./src",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "@components": ["components"],
       "@assets": ["assets"],
       "@hooks": ["hooks"],
+      "@pages": ["pages"],
+      "@constants": ["constants"],
     }
   },
   "include": ["src"]
