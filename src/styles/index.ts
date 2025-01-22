@@ -11,6 +11,7 @@ export const MainContainer = styled.main`
   flex-direction: column;
   align-items: center;
   width: 100%;
+  padding-top: 3%;
   padding-bottom: 4%;
   background-color: #fafafa;
 `;

@@ -1,6 +1,6 @@
-import { Artwork } from 'types';
+import { ArtWork } from 'types';
 
 export interface InfoCardProps {
-  artWork: Artwork;
+  artWork: ArtWork;
   showImg?: boolean;
 }

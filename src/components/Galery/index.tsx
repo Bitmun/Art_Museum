@@ -22,6 +22,10 @@ export const Galery = () => {
     return <div>No response</div>;
   }
 
+  if (!response.pagination) {
+    return <div>No pagination</div>;
+  }
+
   const { current_page, total_pages } = response.pagination;
   const { data } = response;
 

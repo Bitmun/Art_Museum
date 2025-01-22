@@ -1,6 +1,6 @@
 export interface DataResponse<T> {
   data: T;
-  pagination: {
+  pagination?: {
     total_pages: number;
     offset: number;
     current_page: number;

@@ -1,5 +1,5 @@
-import { Artwork } from 'types';
+import { ArtWork } from 'types';
 
 export interface UnitsGridProps {
-  artWorks: Artwork[];
+  artWorks: ArtWork[];
 }

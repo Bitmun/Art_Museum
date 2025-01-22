@@ -1,6 +1,6 @@
 import { ArtHook } from 'hooks/type';
-import { Artwork } from 'types';
+import { ArtWork } from 'types';
 
 export interface UnitsProviderProps {
-  artHook: () => ArtHook<Artwork>;
+  artHook: () => ArtHook<ArtWork>;
 }

@@ -1,5 +1,5 @@
 import { ArtWork } from 'types';
 
-export interface GaleryUnitProps {
+export interface DetailsDisplayProps {
   artWork: ArtWork;
 }

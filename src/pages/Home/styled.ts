@@ -5,7 +5,6 @@ export const SearchContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 3%;
   text-align: center;
 
   h1 {

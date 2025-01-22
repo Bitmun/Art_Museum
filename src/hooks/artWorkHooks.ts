@@ -5,18 +5,18 @@ import {
   fetchArtworkById,
   fetchPaginatedArtworks,
 } from 'api/artworksService';
-import { Artwork } from 'types';
+import { ArtWork } from 'types';
 
 const DEFAULT_LIMIT = 12;
 
 export const useArtworks = () => {
-  return useFetch<Artwork[]>(fetchAllArtworks);
+  return useFetch<ArtWork[]>(fetchAllArtworks);
 };
 
 export const useArtworkById = (id: number) => {
-  return useFetch<Artwork>(() => fetchArtworkById(id), [id]);
+  return useFetch<ArtWork>(() => fetchArtworkById(id), [id]);
 };
 
 export const usePaginatedArtworks = (page: number, limit: number = DEFAULT_LIMIT) => {
-  return useFetch<Artwork[]>(() => fetchPaginatedArtworks(page, limit), [page, limit]);
+  return useFetch<ArtWork[]>(() => fetchPaginatedArtworks(page, limit), [page, limit]);
 };
