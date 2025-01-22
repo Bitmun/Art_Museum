@@ -1,17 +1,17 @@
 import styled from 'styled-components';
 
-export const HeaderContainer = styled.header`
+export const FooterContainer = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
   padding: 0;
+  width: 100%;
   height: 127px;
-  background-color: #000;
+  background-color: #fff;
   color: #fff;
 `;
 
-export const TopBar = styled.div`
+export const BottomBar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,10 +24,4 @@ export const TopBar = styled.div`
 
 export const Logo = styled.img`
   max-width: 100%;
-`;
-
-export const IconTextContainer = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
 `;

@@ -1,35 +1,34 @@
 import { useEffect, useState } from 'react';
 
-interface DataResponse<T> {
-  data: T;
-}
+import { DataResponse } from './type';
 
 export const useFetch = <T>(
   fetchFunction: () => Promise<DataResponse<T>>,
   dependencies: unknown[] = [],
 ) => {
-  const [data, setData] = useState<T | null>(null);
+  const [response, setResponse] = useState<DataResponse<T> | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await fetchFunction();
-        setData(result.data);
-      } catch (err) {
-        if (err instanceof Error) {
-          setError(err.message);
-        } else {
-          setError(String(err));
-        }
-      } finally {
-        setIsLoading(false);
+  const fetchData = async () => {
+    try {
+      const response = await fetchFunction();
+      setResponse(response);
+    } catch (err) {
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError(String(err));
       }
-    };
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
+  useEffect(() => {
+    setIsLoading(true);
     fetchData();
   }, dependencies);
 
-  return { data, isLoading, error };
+  return { response, isLoading, error };
 };
