@@ -1,13 +1,5 @@
-import { Footer } from 'components/Footer';
-import { Header } from 'components/Header';
-import { AppRouter } from 'constants/router/AppRouter';
+import { AppRouter } from 'router/AppRouter';
 
 export const App = () => {
-  return (
-    <div>
-      <Header />
-      <AppRouter />
-      <Footer />
-    </div>
-  );
+  return <AppRouter />;
 };

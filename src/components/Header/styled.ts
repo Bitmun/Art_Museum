@@ -25,9 +25,3 @@ export const TopBar = styled.div`
 export const Logo = styled.img`
   max-width: 100%;
 `;
-
-export const IconTextContainer = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-`;

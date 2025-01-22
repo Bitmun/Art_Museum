@@ -7,7 +7,9 @@ export const DetailsContainer = styled.div`
   gap: 5%;
 `;
 
-export const ImagePart = styled.div``;
+export const ImagePart = styled.div`
+  position: relative;
+`;
 
 export const TextPart = styled.div`
   display: flex;
@@ -17,6 +19,13 @@ export const TextPart = styled.div`
   h2 {
     margin-top: 0;
   }
+`;
+
+export const FavoriteBUttonWrapper = styled.div`
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  padding: 10px;
 `;
 
 export const OvierWiewFieldsContainer = styled.div``;

@@ -1,16 +1,14 @@
-import { HeaderContainer, IconTextContainer, Logo, TopBar } from './styled';
+import { NavBar } from './NavBar';
+import { HeaderContainer, Logo, TopBar } from './styled';
 
-import bookmark from 'assets/images/bookmark.svg';
 import museumLogo from 'assets/images/museum-logo.svg';
+
 export const Header = () => {
   return (
     <HeaderContainer>
       <TopBar>
         <Logo src={museumLogo} alt="Museum logo" />
-        <IconTextContainer>
-          <img src={bookmark} alt="Bookmark icon" />
-          Your favourites
-        </IconTextContainer>
+        <NavBar />
       </TopBar>
     </HeaderContainer>
   );
