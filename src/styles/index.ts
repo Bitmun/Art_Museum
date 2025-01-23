@@ -10,6 +10,7 @@ export const MainContainer = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1;
   width: 100%;
   padding-top: 3%;
   padding-bottom: 4%;

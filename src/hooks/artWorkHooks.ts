@@ -21,8 +21,15 @@ export const useArtworkById = (id: number) => {
   return useFetch<ArtWork>(() => fetchArtworkById(id), [id]);
 };
 
-export const usePaginatedArtworks = (page: number, limit: number = DEFAULT_LIMIT) => {
-  return useFetch<ArtWork[]>(() => fetchPaginatedArtworks(page, limit), [page, limit]);
+export const usePaginatedArtworks = (
+  page: number,
+  limit: number = DEFAULT_LIMIT,
+  query: string = '',
+) => {
+  return useFetch<ArtWork[]>(
+    () => fetchPaginatedArtworks(page, limit, query),
+    [page, limit, query],
+  );
 };
 
 export const useArtworksById = (ids: number[]) => {
