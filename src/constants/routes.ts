@@ -1,7 +1,7 @@
 import { createElement } from 'react';
 
 import { Details } from 'pages/Details';
-import { Favourites } from 'pages/Favourites';
+import { Favorites } from 'pages/Favorites';
 import { Home } from 'pages/Home';
 
 export const ROUTES = [
@@ -10,8 +10,8 @@ export const ROUTES = [
     element: createElement(Home),
   },
   {
-    path: '/favourites',
-    element: createElement(Favourites),
+    path: '/favorites',
+    element: createElement(Favorites),
   },
   {
     path: '/artwork/:id',

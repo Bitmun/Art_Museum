@@ -3,7 +3,7 @@ import { HomeContainer, SearchContainer } from './styled';
 import { Galery } from 'components/Galery';
 import { SearchBar } from 'components/SearchBar';
 import { SupportText } from 'components/SupportText';
-import { UnitsProvider } from 'components/UnitsGridProvider';
+import { UnitsGridProvider } from 'components/UnitsGridProvider';
 import { usePaginatedArtworks } from 'hooks/artWorkHooks';
 import { MainContainer } from 'styles';
 
@@ -20,7 +20,7 @@ export const Home = () => {
         <SupportText mainText="Our special gallery" subText="Topics for you" />
         <Galery />
         <SupportText mainText="Other works for you" subText="Here some more" />
-        <UnitsProvider artHook={() => usePaginatedArtworks(1)} />
+        <UnitsGridProvider artHook={() => usePaginatedArtworks(1)} />
       </HomeContainer>
     </MainContainer>
   );

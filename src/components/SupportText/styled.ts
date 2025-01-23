@@ -4,7 +4,7 @@ export const SupportTextContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10%;
+  margin-top: 7%;
 
   p {
     font-size: 16px;

@@ -17,7 +17,7 @@ export const NavBar = () => {
           </IconTextContainer>
         </Link>
       )}
-      <Link to="/favourites">
+      <Link to="/favorites">
         <IconTextContainer>
           <img src={bookmark} alt="Bookmark icon" />
           Your favourites

@@ -1,7 +1,7 @@
 import { UnitsProviderProps } from './type';
 import { UnitsGrid } from './UnitsGrid';
 
-export const UnitsProvider = ({ artHook }: UnitsProviderProps) => {
+export const UnitsGridProvider = ({ artHook }: UnitsProviderProps) => {
   const { response, isLoading, error } = artHook();
 
   if (isLoading) {

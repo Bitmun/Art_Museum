@@ -5,9 +5,7 @@ const FAVORITES_KEY = 'favorites';
 export const useFavorites = () => {
   const [favoritesVersion, setFavoritesVersion] = useState(0);
 
-  const localItem = localStorage.getItem(FAVORITES_KEY) || '[]';
-
-  const storedFavorites: number[] = JSON.parse(localItem);
+  const { storedFavorites } = useGetFavorites();
 
   const addFavorite = (id: number) => {
     const updatedFavorites = [...storedFavorites, id];
@@ -51,11 +49,18 @@ export const useFavorites = () => {
   }, []);
 
   return {
-    storedFavorites,
     addFavorite,
     removeFavorite,
     isFavorite,
     toggleFavorite,
     favoritesVersion,
   };
+};
+
+export const useGetFavorites = () => {
+  const localItem = localStorage.getItem(FAVORITES_KEY) || '[]';
+
+  const storedFavorites: number[] = JSON.parse(localItem);
+
+  return { storedFavorites };
 };
