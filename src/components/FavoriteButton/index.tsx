@@ -19,8 +19,6 @@ export const FavoriteButton = ({ artId }: FavoriteButtonProps) => {
     toggleFavorite(id);
   };
 
-  console.log('rere');
-
   return (
     <ButtonContainer onClick={() => handleClick(artId)}>
       <FavoriteButtonImage src={bookMark} alt="bookMark" />

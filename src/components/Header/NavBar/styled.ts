@@ -14,4 +14,5 @@ export const NavigationContainer = styled.nav`
   justify-content: space-between;
   align-items: center;
   gap: 20px;
+  cursor: pointer;
 `;
