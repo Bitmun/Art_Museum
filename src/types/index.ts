@@ -7,4 +7,5 @@ export interface ArtWork {
   place_of_origin: string;
   dimensions: string;
   credit_line: string;
+  image_id: number;
 }

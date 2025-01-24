@@ -1,7 +1,10 @@
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const IMAGE_URL = import.meta.env.VITE_API_IMAGE_URL;
 
 const DEFAULT_FIELDS =
-  'id,title,artist_title,is_public_domain,date_display,place_of_origin,dimensions,credit_line';
+  'id,title,artist_title,is_public_domain,date_display,place_of_origin,dimensions,credit_line,image_id';
+
+const IMAGE_DEFAULT_PARAMS = 'full/843,/0/default.jpg';
 
 export const fetchInstance = async (endpoint: string = '', options?: RequestInit) => {
   const url = new URL(`${BASE_URL}${endpoint}`);
@@ -18,4 +21,8 @@ export const fetchInstance = async (endpoint: string = '', options?: RequestInit
     throw new Error(`HTTP error! status: ${response.status}`);
   }
   return await response.json();
+};
+
+export const artWorkImgSrcBuilder = (id: number) => {
+  return `${IMAGE_URL}/${id}/${IMAGE_DEFAULT_PARAMS}`;
 };

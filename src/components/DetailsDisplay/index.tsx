@@ -3,11 +3,13 @@ import { DetailsContainer, FavoriteBUttonWrapper, ImagePart, TextPart } from './
 import { DetailsDisplayProps } from './type';
 
 import { FavoriteButton } from 'components/FavoriteButton';
+import { useArtworkImgSrc } from 'hooks/useArtWorkImgSrc';
 import { SubText } from 'styles';
 
 export const DetailsDisplay = ({ artWork }: DetailsDisplayProps) => {
-  const { title, artist_title, id } = artWork;
-  const imgSrc = `https://placehold.co/497x570`;
+  const { id, title, artist_title, image_id } = artWork;
+  const { imgSrc } = useArtworkImgSrc(image_id);
+
   return (
     <DetailsContainer>
       <ImagePart>
