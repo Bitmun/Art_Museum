@@ -4,7 +4,6 @@ export const GaleryContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-end;
   gap: 20px;
   margin-top: 20px;
 `;
