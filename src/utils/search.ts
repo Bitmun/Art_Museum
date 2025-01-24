@@ -8,3 +8,7 @@ export function debounce<T extends (...args: string[]) => void>(
     timeout = setTimeout(() => func(...args), wait);
   };
 }
+
+export const sanitizeInput = (input: string) => {
+  return input.replace(/\s+/g, ' ').trimStart();
+};

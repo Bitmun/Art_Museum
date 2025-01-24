@@ -6,7 +6,7 @@ export const SearchInput = styled.input`
   border: none;
 `;
 
-export const SearchBarContainer = styled.div`
+export const SearchBarContainer = styled.form`
   display: flex;
   justify-content: space-between;
   width: 60%;
