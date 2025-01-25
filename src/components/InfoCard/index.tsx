@@ -4,14 +4,16 @@ import { InfoCardProps } from './type';
 import notFoundImg from 'assets/images/notFoundImg.svg';
 import { FavoriteButton } from 'components/FavoriteButton';
 import { useArtworkImgSrc } from 'hooks/useArtWorkImgSrc';
+import { useNavigate } from 'react-router-dom';
 import { SubText } from 'styles';
 
 export const InfoCard = ({ artWork, showImg = false }: InfoCardProps) => {
   const { id, title, artist_title, is_public_domain, image_id } = artWork;
   const { imgSrc } = useArtworkImgSrc(image_id);
+  const navigate = useNavigate();
 
   return (
-    <InfoCardContainer>
+    <InfoCardContainer onClick={() => navigate(`/artwork/${id}`)}>
       {showImg && (
         <img
           style={{ width: '80px', height: '80px' }}

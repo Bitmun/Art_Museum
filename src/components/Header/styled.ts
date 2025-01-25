@@ -17,7 +17,7 @@ export const TopBar = styled.div`
   align-items: center;
   width: 65%;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1300px) {
     width: 90%;
   }
 `;

@@ -1,5 +1,11 @@
 import { OverwiewFieldsList } from './OverwiewFieldsList';
-import { DetailsContainer, FavoriteBUttonWrapper, ImagePart, TextPart } from './styled';
+import {
+  DetailsContainer,
+  FavoriteBUttonWrapper,
+  ImagePart,
+  OverwiewContainer,
+  TextPart,
+} from './styled';
 import { DetailsDisplayProps } from './type';
 
 import { FavoriteButton } from 'components/FavoriteButton';
@@ -24,11 +30,11 @@ export const DetailsDisplay = ({ artWork }: DetailsDisplayProps) => {
           <SubText>{artist_title}</SubText>
           <p>1535–45</p>
         </div>
-        <div>
+        <OverwiewContainer>
           <h2>Overwiew</h2>
           <OverwiewFieldsList artWork={artWork} />
           <p>{artWork.is_public_domain ? 'Public' : 'Private'}</p>
-        </div>
+        </OverwiewContainer>
       </TextPart>
     </DetailsContainer>
   );

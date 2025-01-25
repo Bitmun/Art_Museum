@@ -12,4 +12,8 @@ export const UnitsRow = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
+
+  @media (max-width: 1300px) {
+    grid-template-columns: 1fr 1fr;
+  }
 `;

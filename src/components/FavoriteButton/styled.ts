@@ -29,6 +29,8 @@ export const NotFavoriteButtonContainer = styled.button`
 `;
 
 export const FavoriteButtonImage = styled.img`
-  width: 30px;
-  height: 30px;
+  width: 100%
+  height: 100%;
+  max-width: 30px;
+  max-height: 30px;
 `;

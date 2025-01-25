@@ -1,27 +1,44 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { GaleryUnit } from './GaleryUnit';
 import { PaginationRow } from './PaginationRow';
 import { SortField } from './SortField';
 import { GaleryContainer, UnitsRow } from './styled';
 
+import { Loader } from 'components/Loader';
 import { SortFields } from 'constants/sorting';
 import { usePaginatedArtworks } from 'hooks/artWorkHooks';
 import { useSearchContext } from 'hooks/useSearch';
+import { getLimit } from 'utils/handlers/limitHandle';
 import { artSort } from 'utils/sorts';
 
 export const Galery = () => {
   const { query } = useSearchContext();
+  const [limit, setLimit] = useState(getLimit());
   const [currentPage, setCurrentPage] = useState(1);
-  const { response, isLoading, error } = usePaginatedArtworks(currentPage, 3, query);
+  const { response, isLoading, error } = usePaginatedArtworks(currentPage, limit, query);
   const [currentSort, setCurrentSort] = useState<SortFields>(SortFields.TITLE);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setLimit(getLimit());
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    throw new Error('Galery fetching error');
   }
 
   if (!response) {

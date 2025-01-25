@@ -9,7 +9,7 @@ export const UnitsGridProvider = ({ artHook }: UnitsProviderProps) => {
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    throw new Error('Other works fetching error');
   }
 
   if (!response) {

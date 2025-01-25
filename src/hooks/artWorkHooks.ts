@@ -8,10 +8,9 @@ import {
   fetchArtworksByIds,
   fetchPaginatedArtworks,
 } from 'api/artworksService';
+import { DEFAULT_LIMIT } from 'constants/params';
 import { ArtWorksContext } from 'contexts/favoritesContext';
 import { ArtWork } from 'types';
-
-const DEFAULT_LIMIT = 12;
 
 export const useArtworks = () => {
   return useFetch<ArtWork[]>(fetchAllArtworks);

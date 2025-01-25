@@ -17,4 +17,8 @@ export const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 65%;
+
+  @media (max-width: 1300px) {
+    width: 90%;
+  }
 `;

@@ -7,6 +7,12 @@ export const IconTextContainer = styled.button`
   background: none;
   border: none;
   color: #fff;
+  cursor: pointer;
+  font: inherit;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 export const NavigationContainer = styled.nav`
@@ -14,5 +20,4 @@ export const NavigationContainer = styled.nav`
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  cursor: pointer;
 `;

@@ -5,6 +5,7 @@ export const SupportTextContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 7%;
+  margin-bottom: 2%;
 
   p {
     font-size: 16px;
@@ -14,7 +15,7 @@ export const SupportTextContainer = styled.div`
   }
 
   h2 {
-    margin-top: 0;
+    margin: 0;
     font-size: 2rem;
     font-weight: 400;
   }

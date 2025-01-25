@@ -5,6 +5,10 @@ export const FavoritesContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 65%;
+
+  @media (max-width: 1300px) {
+    width: 90%;
+  }
 `;
 
 export const MainTextContainer = styled.div`

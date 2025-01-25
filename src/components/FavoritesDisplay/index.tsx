@@ -1,13 +1,12 @@
 import { FavoritesContainer, MainTextContainer } from './styled';
+import { FavoritesDisplayProps } from './type';
 
 import bookmark from 'assets/images/bookmark.svg';
 import { SupportText } from 'components/SupportText';
 import { UnitsGrid } from 'components/UnitsGridProvider/UnitsGrid';
-import { useArtWorksContext } from 'hooks/artWorkHooks';
 
-export const FavoritesDisplay = () => {
-  const { artWorks } = useArtWorksContext();
-
+export const FavoritesDisplay = ({ favorites }: FavoritesDisplayProps) => {
+  const noFavorites = !favorites || favorites.length === 0;
   return (
     <FavoritesContainer>
       <MainTextContainer>
@@ -17,11 +16,12 @@ export const FavoritesDisplay = () => {
           <h1 style={{ color: '#F17900' }}>Favorites</h1>
         </div>
       </MainTextContainer>
-      {artWorks.length === 0 && <h2>No favorites yet...</h2>}
-      {artWorks.length !== 0 && (
+      {noFavorites ? (
+        <h2>No favorites yet...</h2>
+      ) : (
         <>
           <SupportText mainText="Your favorites list" subText="Saved by you" />
-          <UnitsGrid artWorks={artWorks} />
+          <UnitsGrid artWorks={favorites} />
         </>
       )}
     </FavoritesContainer>

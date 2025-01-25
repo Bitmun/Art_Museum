@@ -1,14 +1,33 @@
 import styled from 'styled-components';
 
 export const DetailsContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+  display: flex;
+  justify-content: space-between;
   width: 65%;
-  gap: 5%;
+  max-width: 1200px;
+  gap: 2rem;
+  @media (max-width: 1300px) {
+    width: 90%;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const ImagePart = styled.div`
   position: relative;
+
+  img {
+    width: 100%;
+    height: auto;
+    max-height: 100vh;
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
+  }
 `;
 
 export const TextPart = styled.div`
@@ -18,6 +37,19 @@ export const TextPart = styled.div`
 
   h2 {
     margin-top: 0;
+  }
+
+  @media (max-width: 768px) {
+    align-items: center;
+    text-align: center;
+  }
+`;
+
+export const OverwiewContainer = styled.div`
+  @media (max-width: 768px) {
+    p {
+      text-align: left;
+    }
   }
 `;
 

@@ -1,4 +1,5 @@
 import { FavoritesDisplay } from 'components/FavoritesDisplay';
+import { Loader } from 'components/Loader';
 import { ArtWorksProvider } from 'contexts/favoritesContext';
 import { useArtworksById } from 'hooks/artWorkHooks';
 import { useGetFavorites } from 'hooks/useFavorites';
@@ -10,7 +11,11 @@ export const Favorites = () => {
   const { response, isLoading } = useArtworksById(storedFavorites);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <MainContainer>
+        <Loader />
+      </MainContainer>
+    );
   }
 
   if (!response) {
@@ -22,7 +27,7 @@ export const Favorites = () => {
   return (
     <ArtWorksProvider artWorksProp={data}>
       <MainContainer>
-        <FavoritesDisplay />
+        <FavoritesDisplay favorites={data} />
       </MainContainer>
     </ArtWorksProvider>
   );

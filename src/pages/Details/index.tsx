@@ -1,4 +1,5 @@
 import { DetailsDisplay } from 'components/DetailsDisplay';
+import { Loader } from 'components/Loader';
 import { useArtworkById } from 'hooks/artWorkHooks';
 import { useParams } from 'react-router-dom';
 import { MainContainer } from 'styles';
@@ -9,14 +10,14 @@ export const Details = () => {
   const { response, isLoading, error } = useArtworkById(Number(id));
 
   if (isLoading) {
-    return <MainContainer>Loading...</MainContainer>;
+    return (
+      <MainContainer>
+        <Loader />
+      </MainContainer>
+    );
   }
 
-  if (error) {
-    return <MainContainer>Error: {error}</MainContainer>;
-  }
-
-  if (!response) {
+  if (!response || error) {
     return <MainContainer>No response</MainContainer>;
   }
 

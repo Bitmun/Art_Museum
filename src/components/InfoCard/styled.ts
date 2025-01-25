@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const InfoCardContainer = styled.div`
+export const InfoCardContainer = styled.button`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -9,6 +9,14 @@ export const InfoCardContainer = styled.div`
   box-sizing: border-box;
   border: 1px solid #f0f1f1;
   background-color: #fff;
+  transition: transform 0.3s ease-in-out;
+  font: inherit;
+  text-align: inherit;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+  }
 `;
 
 export const InfoCardTextContainer = styled.div`

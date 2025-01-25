@@ -34,7 +34,12 @@ export const FavoriteButton = ({ artId }: FavoriteButtonProps) => {
   };
 
   return (
-    <ButtonContainer onClick={() => handleClick(artId)}>
+    <ButtonContainer
+      onClick={(e) => {
+        e.stopPropagation();
+        handleClick(artId);
+      }}
+    >
       <FavoriteButtonImage src={bookMark} alt="bookMark" />
     </ButtonContainer>
   );
