@@ -27,7 +27,7 @@ export const Favorites = () => {
   return (
     <ArtWorksProvider artWorksProp={data}>
       <MainContainer>
-        <FavoritesDisplay favorites={data} />
+        <FavoritesDisplay />
       </MainContainer>
     </ArtWorksProvider>
   );
