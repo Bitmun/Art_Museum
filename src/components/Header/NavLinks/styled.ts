@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+export const LinkButton = styled.button``;
+
 export const IconTextContainer = styled.button`
   display: flex;
   align-items: center;
@@ -13,11 +15,4 @@ export const IconTextContainer = styled.button`
   &:hover {
     text-decoration: underline;
   }
-`;
-
-export const NavigationContainer = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
 `;

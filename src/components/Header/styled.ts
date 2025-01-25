@@ -22,6 +22,17 @@ export const TopBar = styled.div`
   }
 `;
 
+export const NavigationContainer = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
 export const Logo = styled.img`
   max-width: 100%;
 `;
