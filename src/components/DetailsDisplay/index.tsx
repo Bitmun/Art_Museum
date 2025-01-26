@@ -1,13 +1,14 @@
 import { OverwiewFieldsList } from './OverwiewFieldsList';
 import {
   DetailsContainer,
-  FavoriteBUttonWrapper,
+  FavoriteButtonWrapper,
   ImagePart,
   OverwiewContainer,
   TextPart,
 } from './styled';
 import { DetailsDisplayProps } from './type';
 
+import { ArtImg } from 'components/ArtImg';
 import { FavoriteButton } from 'components/FavoriteButton';
 import { useArtworkImgSrc } from 'hooks/useArtWorkImgSrc';
 import { SubText } from 'styles';
@@ -19,10 +20,10 @@ export const DetailsDisplay = ({ artWork }: DetailsDisplayProps) => {
   return (
     <DetailsContainer>
       <ImagePart>
-        <img src={imgSrc} alt={title} />
-        <FavoriteBUttonWrapper>
+        <ArtImg imgSrc={imgSrc} title={title} />
+        <FavoriteButtonWrapper>
           <FavoriteButton artId={id} />
-        </FavoriteBUttonWrapper>
+        </FavoriteButtonWrapper>
       </ImagePart>
       <TextPart>
         <div>

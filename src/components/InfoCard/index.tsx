@@ -1,9 +1,7 @@
-import { useState } from 'react';
-
 import { InfoCardContainer, InfoCardImg, InfoCardTextContainer } from './styled';
 import { InfoCardProps } from './type';
 
-import notFoundImg from 'assets/images/notFoundImg.svg';
+import { ArtImg } from 'components/ArtImg';
 import { FavoriteButton } from 'components/FavoriteButton';
 import { useArtworkImgSrc } from 'hooks/useArtWorkImgSrc';
 import { useNavigate } from 'react-router-dom';
@@ -13,23 +11,10 @@ export const InfoCard = ({ artWork, showImg = false }: InfoCardProps) => {
   const { id, title, artist_title, is_public_domain, image_id } = artWork;
   const { imgSrc } = useArtworkImgSrc(image_id);
   const navigate = useNavigate();
-  const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
     <InfoCardContainer onClick={() => navigate(`/artwork/${id}`)}>
-      {showImg && (
-        <>
-          {!imageLoaded && <InfoCardImg src={notFoundImg} alt="Not found image" />}
-          <InfoCardImg
-            src={imgSrc}
-            alt={title}
-            style={{ display: imageLoaded ? 'block' : 'none' }}
-            onLoad={() => {
-              setImageLoaded(true);
-            }}
-          />
-        </>
-      )}
+      {showImg && <ArtImg imgSrc={imgSrc} title={title} CustomImg={InfoCardImg} />}
       <InfoCardTextContainer>
         <p>{title}</p>
         <SubText>{artist_title || 'Unknown'}</SubText>

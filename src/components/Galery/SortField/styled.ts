@@ -7,4 +7,10 @@ export const SortFieldContainer = styled.div`
   align-items: center;
 `;
 
-export const SortSelect = styled.select``;
+export const SortSelect = styled.select`
+  padding-right: 1rem;
+  font: inherit;
+  font-size: 1rem;
+  border: 1px solid;
+  border-radius: 3px;
+`;

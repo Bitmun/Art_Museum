@@ -3,10 +3,9 @@ import { useEffect, useState } from 'react';
 import { GaleryUnit } from './GaleryUnit';
 import { PaginationRow } from './PaginationRow';
 import { SortField } from './SortField';
-import { GaleryContainer, GalerySettingsContainer, UnitsRow } from './styled';
+import { GaleryContainer, GalerySettingsContainer, NoQueryRes, UnitsRow } from './styled';
 
 import { Loader } from 'components/Loader';
-import { NoResponse } from 'components/NoResponse';
 import { SortFields } from 'constants/sorting';
 import { usePaginatedArtworks } from 'hooks/artWorkHooks';
 import { useSearchContext } from 'hooks/useSearch';
@@ -39,15 +38,17 @@ export const Galery = () => {
   }
 
   if (error) {
-    throw new Error('Galery fetching error');
+    throw new Error(
+      'Galery fetching error. Check internet connection and update the page',
+    );
   }
 
   if (!response) {
-    return <NoResponse />;
+    throw new Error('No response');
   }
 
   if (!response.pagination) {
-    return <div>No pagination</div>;
+    throw new Error('Pagination error.');
   }
 
   const { current_page, total_pages } = response.pagination;
@@ -55,10 +56,11 @@ export const Galery = () => {
 
   artSort(data, currentSort);
 
-  console.log(data);
+  const noResBySearch = data.length === 0 && query;
 
   return (
     <GaleryContainer>
+      {noResBySearch && <NoQueryRes>Nothing found. Try another query</NoQueryRes>}
       <UnitsRow>
         {data.map((artwork) => (
           <GaleryUnit key={artwork.id} artWork={artwork} />

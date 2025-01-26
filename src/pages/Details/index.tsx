@@ -17,8 +17,12 @@ export const Details = () => {
     );
   }
 
-  if (!response || error) {
-    return <MainContainer>No response</MainContainer>;
+  if (!response) {
+    throw new Error('Art not found');
+  }
+
+  if (error) {
+    throw new Error('Details fetching error.');
   }
 
   const { data } = response;

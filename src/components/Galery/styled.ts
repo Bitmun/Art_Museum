@@ -22,3 +22,9 @@ export const GalerySettingsContainer = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
+export const NoQueryRes = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;

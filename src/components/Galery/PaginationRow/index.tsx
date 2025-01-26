@@ -22,6 +22,18 @@ export const PaginationRow = ({
     setCurrentPage(page);
   };
 
+  const noPagination = totalPages === 0 || totalPages === 1;
+
+  if (noPagination) {
+    return (
+      <PaginationContainer>
+        <PagButton disabled>&lt;</PagButton>
+        <SelectedPagButton disabled>1</SelectedPagButton>
+        <PagButton disabled>&gt;</PagButton>
+      </PaginationContainer>
+    );
+  }
+
   const pageNumbers = [];
   const maxPagesToShow = 4;
   let startPage = Math.max(1, currentPage - Math.floor(maxPagesToShow / 2));

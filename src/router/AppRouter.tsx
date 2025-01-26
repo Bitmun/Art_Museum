@@ -1,5 +1,6 @@
 import { ROUTES } from '../constants/routes';
 
+import { ErrorBoundary } from 'components/ErrorBoundary';
 import { Footer } from 'components/Footer';
 import { Header } from 'components/Header';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
@@ -7,7 +8,9 @@ import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 const Layout = () => (
   <>
     <Header />
-    <Outlet />
+    <ErrorBoundary>
+      <Outlet />
+    </ErrorBoundary>
     <Footer />
   </>
 );

@@ -1,4 +1,4 @@
-import { SortFieldContainer } from './styled';
+import { SortFieldContainer, SortSelect } from './styled';
 import { SortFieldProps } from './type';
 
 import { SortFields, sortFields } from 'constants/sorting';
@@ -6,8 +6,8 @@ import { SortFields, sortFields } from 'constants/sorting';
 export const SortField = ({ currentSort, setCurrentSort }: SortFieldProps) => {
   return (
     <SortFieldContainer>
-      <p>Sort by:</p>
-      <select
+      <p>A-Z Sort art by:</p>
+      <SortSelect
         value={currentSort}
         onChange={(e) => setCurrentSort(e.target.value as SortFields)}
       >
@@ -19,7 +19,7 @@ export const SortField = ({ currentSort, setCurrentSort }: SortFieldProps) => {
             </option>
           );
         })}
-      </select>
+      </SortSelect>
     </SortFieldContainer>
   );
 };

@@ -53,7 +53,7 @@ export const OverwiewContainer = styled.div`
   }
 `;
 
-export const FavoriteBUttonWrapper = styled.div`
+export const FavoriteButtonWrapper = styled.div`
   position: absolute;
   top: 1%;
   right: 1%;

@@ -1,6 +1,5 @@
 import { FavoritesDisplay } from 'components/FavoritesDisplay';
 import { Loader } from 'components/Loader';
-import { NoResponse } from 'components/NoResponse';
 import { ArtWorksProvider } from 'contexts/favoritesContext';
 import { useArtworksById } from 'hooks/artWorkHooks';
 import { useGetFavorites } from 'hooks/useFavorites';
@@ -9,7 +8,7 @@ import { MainContainer } from 'styles';
 export const Favorites = () => {
   const { storedFavorites } = useGetFavorites();
 
-  const { response, isLoading } = useArtworksById(storedFavorites);
+  const { response, isLoading, error } = useArtworksById(storedFavorites);
 
   if (isLoading) {
     return (
@@ -20,11 +19,11 @@ export const Favorites = () => {
   }
 
   if (!response) {
-    return (
-      <MainContainer>
-        <NoResponse />
-      </MainContainer>
-    );
+    throw new Error('No response');
+  }
+
+  if (error) {
+    throw new Error('Favorites fetching error');
   }
 
   const { data } = response;
