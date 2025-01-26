@@ -3,9 +3,10 @@ import { useEffect, useState } from 'react';
 import { GaleryUnit } from './GaleryUnit';
 import { PaginationRow } from './PaginationRow';
 import { SortField } from './SortField';
-import { GaleryContainer, UnitsRow } from './styled';
+import { GaleryContainer, GalerySettingsContainer, UnitsRow } from './styled';
 
 import { Loader } from 'components/Loader';
+import { NoResponse } from 'components/NoResponse';
 import { SortFields } from 'constants/sorting';
 import { usePaginatedArtworks } from 'hooks/artWorkHooks';
 import { useSearchContext } from 'hooks/useSearch';
@@ -42,7 +43,7 @@ export const Galery = () => {
   }
 
   if (!response) {
-    return <div>No response</div>;
+    return <NoResponse />;
   }
 
   if (!response.pagination) {
@@ -54,6 +55,8 @@ export const Galery = () => {
 
   artSort(data, currentSort);
 
+  console.log(data);
+
   return (
     <GaleryContainer>
       <UnitsRow>
@@ -61,7 +64,7 @@ export const Galery = () => {
           <GaleryUnit key={artwork.id} artWork={artwork} />
         ))}
       </UnitsRow>
-      <div
+      <GalerySettingsContainer
         style={{
           display: 'flex',
           justifyContent: 'space-between',
@@ -73,7 +76,7 @@ export const Galery = () => {
           totalPages={total_pages}
           setCurrentPage={setCurrentPage}
         />
-      </div>
+      </GalerySettingsContainer>
     </GaleryContainer>
   );
 };

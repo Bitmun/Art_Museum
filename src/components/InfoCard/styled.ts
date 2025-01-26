@@ -31,3 +31,8 @@ export const InfoCardTextContainer = styled.div`
     text-overflow: ellipsis; /* Adds ellipsis (...) for overflowing text */
   }
 `;
+
+export const InfoCardImg = styled.img`
+  width: 80px;
+  height: 80px;
+`;

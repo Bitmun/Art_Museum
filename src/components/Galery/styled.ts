@@ -17,3 +17,8 @@ export const UnitsRow = styled.div`
     grid-template-columns: 1fr 1fr;
   }
 `;
+
+export const GalerySettingsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;

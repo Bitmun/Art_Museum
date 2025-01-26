@@ -17,8 +17,8 @@ export const HomeDisplay = () => {
           </h1>
           <SearchBar />
         </SearchContainer>
+        <SupportText mainText="Our special gallery" subText="Topics for you" />
         <ErrorBoundary>
-          <SupportText mainText="Our special gallery" subText="Topics for you" />
           <Galery />
         </ErrorBoundary>
         <SupportText mainText="Other works for you" subText="Here some more" />

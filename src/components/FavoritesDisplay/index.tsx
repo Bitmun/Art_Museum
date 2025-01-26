@@ -1,4 +1,4 @@
-import { FavoritesContainer, MainTextContainer } from './styled';
+import { FavoritesContainer, HeadTextContainer } from './styled';
 
 import bookmark from 'assets/images/bookmark.svg';
 import { SupportText } from 'components/SupportText';
@@ -10,13 +10,14 @@ export const FavoritesDisplay = () => {
   const noFavorites = !artWorks || artWorks.length === 0;
   return (
     <FavoritesContainer>
-      <MainTextContainer>
-        <h1>Here are your</h1>
-        <div>
+      <HeadTextContainer>
+        <h1>
+          Here are your
+          <br />
           <img src={bookmark} alt="Bookmark icon" />
-          <h1 style={{ color: '#F17900' }}>Favorites</h1>
-        </div>
-      </MainTextContainer>
+          <span style={{ color: '#F17900' }}>Favorites</span>
+        </h1>
+      </HeadTextContainer>
       {noFavorites ? (
         <h2>No favorites yet...</h2>
       ) : (

@@ -33,6 +33,13 @@ export const NavigationContainer = styled.nav`
   }
 `;
 
-export const Logo = styled.img`
+export const LogoContainer = styled.button`
+  max-width: 100%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+`;
+
+export const LogoImg = styled.img`
   max-width: 100%;
 `;

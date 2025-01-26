@@ -17,6 +17,11 @@ export const UnitContainer = styled.button`
   }
 `;
 
+export const UnitImg = styled.img`
+  width: 100%;
+  height: 100%;
+`;
+
 export const InfoCardWrapper = styled.div`
   display: flex;
   width: 80%;

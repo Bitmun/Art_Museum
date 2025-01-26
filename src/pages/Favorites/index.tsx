@@ -1,5 +1,6 @@
 import { FavoritesDisplay } from 'components/FavoritesDisplay';
 import { Loader } from 'components/Loader';
+import { NoResponse } from 'components/NoResponse';
 import { ArtWorksProvider } from 'contexts/favoritesContext';
 import { useArtworksById } from 'hooks/artWorkHooks';
 import { useGetFavorites } from 'hooks/useFavorites';
@@ -19,7 +20,11 @@ export const Favorites = () => {
   }
 
   if (!response) {
-    return <div>No response</div>;
+    return (
+      <MainContainer>
+        <NoResponse />
+      </MainContainer>
+    );
   }
 
   const { data } = response;

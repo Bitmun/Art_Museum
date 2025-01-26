@@ -1,4 +1,4 @@
-import { OverwiewFieldsListContainer } from './styled';
+import { OverwiewFieldContainer, OverwiewFieldsListContainer } from './styled';
 import { OverWiewFieldsProps } from './type';
 
 import { OVERWEIW_FIELDS } from 'constants/details';
@@ -13,10 +13,10 @@ export const OverwiewFieldsList = ({ artWork }: OverWiewFieldsProps) => {
           : (artWork[key] as string);
 
         return (
-          <p key={keyToDisplay}>
-            <span style={{ color: '#E0A449' }}>{keyToDisplay}:</span>{' '}
+          <OverwiewFieldContainer key={keyToDisplay}>
+            <span style={{ color: '#E0A449' }}>{keyToDisplay}:</span>
             {fieldValue || 'Unknown'}
-          </p>
+          </OverwiewFieldContainer>
         );
       })}
     </OverwiewFieldsListContainer>

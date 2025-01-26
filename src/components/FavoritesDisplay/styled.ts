@@ -11,7 +11,7 @@ export const FavoritesContainer = styled.div`
   }
 `;
 
-export const MainTextContainer = styled.div`
+export const HeadTextContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
