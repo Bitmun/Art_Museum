@@ -7,6 +7,7 @@ export const SearchInput = styled.input`
 `;
 
 export const SearchBarContainer = styled.form`
+  position: relative;
   display: flex;
   justify-content: space-between;
   width: 60%;
@@ -16,6 +17,10 @@ export const SearchBarContainer = styled.form`
   border-radius: 16px;
 `;
 
-export const SearchIcon = styled.img`
-  cursor: pointer;
+export const SearchIcon = styled.img``;
+
+export const ErrorMessageContainer = styled.div`
+  position: absolute;
+  top: 100%;
+  color: red;
 `;

@@ -1,6 +1,13 @@
+import { useState } from 'react';
+
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import { SearchBarContainer, SearchIcon, SearchInput } from './styled';
+import {
+  ErrorMessageContainer,
+  SearchBarContainer,
+  SearchIcon,
+  SearchInput,
+} from './styled';
 
 import searchLogo from 'assets/images/search.svg';
 import { useSearchContext } from 'hooks/useSearch';
@@ -10,6 +17,7 @@ import { debounce, sanitizeInput } from 'utils/search';
 
 export const SearchBar = () => {
   const { setQuery } = useSearchContext();
+  const [error, setError] = useState('');
 
   const { control } = useForm({
     resolver: yupResolver(searchSchema),
@@ -19,11 +27,19 @@ export const SearchBar = () => {
   const handleSearchChange = debounce((input: string) => {
     if (input.length === 0) {
       setQuery('');
+      setError('');
+    } else {
+      searchSchema
+        .validate({ query: input })
+        .then(() => {
+          setQuery(input.trim());
+          setError('');
+        })
+        .catch((err) => {
+          setError(err.errors[0]);
+        });
     }
-    if (input.length > 2) {
-      setQuery(input.trim());
-    }
-  }, 500);
+  }, 1000);
 
   return (
     <SearchBarContainer>
@@ -31,15 +47,18 @@ export const SearchBar = () => {
         name="query"
         control={control}
         render={({ field }) => (
-          <SearchInput
-            {...field}
-            placeholder="Search art, artist, work..."
-            onChange={(e) => {
-              const sanitizedValue = sanitizeInput(e.target.value);
-              field.onChange(sanitizedValue);
-              handleSearchChange(sanitizedValue);
-            }}
-          />
+          <>
+            <SearchInput
+              {...field}
+              placeholder="Search art, artist, work..."
+              onChange={(e) => {
+                const sanitizedValue = sanitizeInput(e.target.value);
+                field.onChange(sanitizedValue);
+                handleSearchChange(sanitizedValue);
+              }}
+            />
+            {error && <ErrorMessageContainer>{error}</ErrorMessageContainer>}
+          </>
         )}
       />
       <SearchIcon src={searchLogo} alt="Search icon" />

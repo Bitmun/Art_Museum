@@ -5,6 +5,7 @@ export const FavoritesContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 65%;
+  text-align: center;
 
   @media (max-width: 1300px) {
     width: 90%;

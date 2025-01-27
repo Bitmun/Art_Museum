@@ -66,12 +66,7 @@ export const Galery = () => {
           <GaleryUnit key={artwork.id} artWork={artwork} />
         ))}
       </UnitsRow>
-      <GalerySettingsContainer
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-        }}
-      >
+      <GalerySettingsContainer>
         <SortField currentSort={currentSort} setCurrentSort={setCurrentSort} />
         <PaginationRow
           currentPage={current_page}
