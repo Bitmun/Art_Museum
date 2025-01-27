@@ -17,6 +17,7 @@ export const DetailsContainer = styled.div`
 
 export const ImagePart = styled.div`
   position: relative;
+  width: 100%;
 
   img {
     width: 100%;
