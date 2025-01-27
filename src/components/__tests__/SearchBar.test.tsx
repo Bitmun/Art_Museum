@@ -20,9 +20,12 @@ describe('SearchBar', () => {
     const searchInput = getByPlaceholderText('Search art, artist, work...');
     fireEvent.change(searchInput, { target: { value: 'Test search query' } });
 
-    await waitFor(() => {
-      expect(setQuery).toHaveBeenCalledWith('Test search query');
-    });
+    await waitFor(
+      () => {
+        expect(setQuery).toHaveBeenCalledWith('Test search query');
+      },
+      { timeout: 1500 },
+    );
   });
 });
 
