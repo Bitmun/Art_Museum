@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const InfoCardContainer = styled.button`
+export const InfoCardContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,8 +27,8 @@ export const InfoCardTextContainer = styled.div`
   p {
     margin: 3%;
     overflow: hidden;
-    white-space: nowrap; /* Prevents text from wrapping */
-    text-overflow: ellipsis; /* Adds ellipsis (...) for overflowing text */
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 `;
 

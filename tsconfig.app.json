@@ -28,5 +28,4 @@
       "@constants": ["constants"],
     }
   },
-  "include": ["src"]
 }

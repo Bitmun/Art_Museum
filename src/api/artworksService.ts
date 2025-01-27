@@ -1,4 +1,4 @@
-import { fetchInstance } from 'api';
+import { fetchInstance } from './';
 
 export const fetchAllArtworks = async () => {
   return await fetchInstance();

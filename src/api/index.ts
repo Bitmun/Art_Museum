@@ -1,7 +1,7 @@
 import { DEFAULT_FIELDS, IMAGE_DEFAULT_PARAMS } from 'constants/params';
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL;
-const IMAGE_URL = import.meta.env.VITE_API_IMAGE_URL;
+const BASE_URL = process.env.VITE_API_BASE_URL;
+const IMAGE_URL = process.env.VITE_API_IMAGE_URL;
 
 export const fetchInstance = async (endpoint: string = '', options?: RequestInit) => {
   const url = new URL(`${BASE_URL}${endpoint}`);
