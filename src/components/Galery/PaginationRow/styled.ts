@@ -26,6 +26,6 @@ export const PagButton = styled.button`
 export const SelectedPagButton = styled.button`
   border: none;
   border-radius: 4px;
-  background-color: #e0a449;
+  background-color: var(--subTextSecondary-color);
   color: white;
 `;

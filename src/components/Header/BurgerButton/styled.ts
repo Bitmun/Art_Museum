@@ -8,6 +8,6 @@ export const BurgerButtonContainer = styled.button`
     font-size: 2rem;
     background: none;
     border: none;
-    color: #fff;
+    color: white;
   }
 `;

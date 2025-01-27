@@ -9,7 +9,7 @@ export const SupportTextContainer = styled.div`
 
   p {
     font-size: 16px;
-    color: #e0a449;
+    color: var(--subTextSecondary-color);
     weight: 400;
     margin-bottom: 0;
   }

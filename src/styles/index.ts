@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 
 export const SubText = styled.p`
   font-size: 16px;
-  color: #e0a449;
+  color: var(--subTextSecondary-color);
   weight: 400;
 `;
 
@@ -14,7 +14,7 @@ export const MainContainer = styled.main`
   width: 100%;
   padding-top: 3%;
   padding-bottom: 4%;
-  background-color: #fafafa;
+  background-color: var(--mainBackGround-color);
 `;
 
 export const SupportText = styled.div`
@@ -24,7 +24,7 @@ export const SupportText = styled.div`
 
   p {
     font-size: 16px;
-    color: #e0a449;
+    color: var(--subTextSecondary-color);
     weight: 400;
     margin-bottom: 0;
   }
@@ -34,4 +34,8 @@ export const SupportText = styled.div`
     font-size: 2rem;
     font-weight: 400;
   }
+`;
+
+export const SecondaryColorText = styled.span`
+  color: var(--secondary-color);
 `;

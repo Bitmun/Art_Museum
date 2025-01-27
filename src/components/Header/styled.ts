@@ -8,7 +8,7 @@ export const HeaderContainer = styled.header`
   padding: 0;
   height: 127px;
   background-color: #000;
-  color: #fff;
+  color: white;
 `;
 
 export const TopBar = styled.div`

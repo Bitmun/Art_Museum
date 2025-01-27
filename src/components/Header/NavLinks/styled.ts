@@ -8,7 +8,7 @@ export const IconTextContainer = styled.button`
   gap: 10px;
   background: none;
   border: none;
-  color: #fff;
+  color: white;
   cursor: pointer;
   font: inherit;
 

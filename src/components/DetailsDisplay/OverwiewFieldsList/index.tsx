@@ -14,7 +14,9 @@ export const OverwiewFieldsList = ({ artWork }: OverWiewFieldsProps) => {
 
         return (
           <OverwiewFieldContainer key={keyToDisplay}>
-            <span style={{ color: '#E0A449' }}>{keyToDisplay}:</span>
+            <span style={{ color: 'var(--subTextSecondary-color)' }}>
+              {keyToDisplay}:
+            </span>
             {fieldValue || 'Unknown'}
           </OverwiewFieldContainer>
         );

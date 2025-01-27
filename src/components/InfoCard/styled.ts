@@ -8,7 +8,7 @@ export const InfoCardContainer = styled.div`
   padding: 2% 4%;
   box-sizing: border-box;
   border: 1px solid #f0f1f1;
-  background-color: #fff;
+  background-color: white;
   transition: transform 0.3s ease-in-out;
   font: inherit;
   text-align: inherit;

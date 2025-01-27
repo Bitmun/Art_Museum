@@ -7,8 +7,8 @@ export const FooterContainer = styled.footer`
   padding: 0;
   width: 100%;
   height: 127px;
-  background-color: #fff;
-  color: #fff;
+  background-color: white;
+  color: white;
 `;
 
 export const BottomBar = styled.div`

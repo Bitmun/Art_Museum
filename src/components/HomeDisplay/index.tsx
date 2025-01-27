@@ -6,6 +6,7 @@ import { UnitsGridProvider } from 'components/UnitsGridProvider';
 import { SearchContextProvider } from 'contexts/searchContext';
 import { usePaginatedArtworks } from 'hooks/artWorkHooks';
 import { HomeContainer, SearchContainer } from 'pages/Home/styled';
+import { SecondaryColorText } from 'styles';
 
 export const HomeDisplay = () => {
   return (
@@ -13,7 +14,7 @@ export const HomeDisplay = () => {
       <HomeContainer>
         <SearchContainer>
           <h1>
-            Let&#39;s Find Some <span style={{ color: '#F17900' }}>Art</span> Here!
+            Let&#39;s Find Some <SecondaryColorText>Art</SecondaryColorText> Here!
           </h1>
           <SearchBar />
         </SearchContainer>
