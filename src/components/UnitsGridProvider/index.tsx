@@ -2,7 +2,6 @@ import { UnitsProviderProps } from './type';
 import { UnitsGrid } from './UnitsGrid';
 
 import { Loader } from 'components/Loader';
-import { NoResponse } from 'components/NoResponse';
 
 export const UnitsGridProvider = ({ artHook }: UnitsProviderProps) => {
   const { response, isLoading, error } = artHook();
@@ -16,7 +15,7 @@ export const UnitsGridProvider = ({ artHook }: UnitsProviderProps) => {
   }
 
   if (!response) {
-    return <NoResponse />;
+    throw new Error('No response');
   }
 
   const { data } = response;

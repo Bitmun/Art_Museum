@@ -17,7 +17,12 @@ export const SearchBar = () => {
   });
 
   const handleSearchChange = debounce((input: string) => {
-    setQuery(input.trim());
+    if (input.length === 0) {
+      setQuery('');
+    }
+    if (input.length > 2) {
+      setQuery(input.trim());
+    }
   }, 500);
 
   return (

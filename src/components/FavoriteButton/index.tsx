@@ -15,8 +15,7 @@ export const FavoriteButton = ({ artId }: FavoriteButtonProps) => {
   let setArtWorks;
   try {
     setArtWorks = useArtWorksContext().setArtWorks;
-  } catch (err: unknown) {
-    console.log(err);
+  } catch (_err: unknown) {
     setArtWorks = null;
   }
 
